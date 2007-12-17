@@ -10,7 +10,6 @@ Group:		System/Libraries
 URL:		http://www.nongnu.org/confuse/
 Source0:	http://savannah.nongnu.org/download/confuse/confuse-%{version}.tar.gz
 Source1:	http://savannah.nongnu.org/download/confuse/confuse-%{version}.tar.gz.sig
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
 libConfuse is a configuration file parser library, licensed under
