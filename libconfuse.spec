@@ -6,7 +6,7 @@
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
 Version:	2.6
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	ISC
 Group:		System/Libraries
 URL:		http://www.nongnu.org/confuse/
@@ -60,7 +60,7 @@ Development library and header files for the %{name} library
 %package -n	%{libname_devel_static}
 Summary:	Development files for the %{name} library (static)
 Group:		Development/C
-Provides:	confuse-devel = %{version}
+Provides:	confuse-static-devel = %{version}
 Requires:	%{libname_devel} = %{version}
 
 %description -n	%{libname_devel_static}
