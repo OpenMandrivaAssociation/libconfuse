@@ -90,9 +90,13 @@ install -m0644 doc/man/man3/*.3 %{buildroot}%{_mandir}/man3/
 
 %find_lang confuse
 
+%if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
+%endif
 
+%if %mdkversion < 200900
 %postun -n %{libname} -p /sbin/ldconfig
+%endif
 
 %clean
 [ -n "%{buildroot}" -a "%{buildroot}" != / ] && rm -rf %{buildroot}
