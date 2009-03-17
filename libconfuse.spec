@@ -104,7 +104,7 @@ install -m0644 doc/man/man3/*.3 %{buildroot}%{_mandir}/man3/
 %files -n %{libname} -f confuse.lang
 %defattr(-,root,root)
 %doc AUTHORS NEWS README
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 %{_mandir}/man3/*
 
 %files -n %{libname_devel}
