@@ -6,7 +6,7 @@
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
 Version:	2.6
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	ISC
 Group:		System/Libraries
 URL:		http://www.nongnu.org/confuse/
