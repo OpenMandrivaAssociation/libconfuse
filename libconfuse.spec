@@ -5,13 +5,13 @@
 
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
-Version:	2.6
-Release:	%mkrel 6
+Version:	2.7
+Release:	%mkrel 1
 License:	ISC
 Group:		System/Libraries
 URL:		http://www.nongnu.org/confuse/
-Source0:	http://bzero.se/confuse/confuse-2.6.tar.gz
-Patch0:		confuse-2.6-no-Werror.patch
+Source0:	http://bzero.se/confuse/confuse-%{version}.tar.gz
+#Patch0:		confuse-2.6-no-Werror.patch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 
 %description
@@ -69,7 +69,7 @@ Static development library for %{libname}
 %prep
 
 %setup -q -n confuse-%{version}
-%patch0 -p1 -b .werror
+#%patch0 -p1 -b .werror
 
 %build
 
