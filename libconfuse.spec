@@ -1,11 +1,11 @@
-%define major 0
-%define libname %mklibname confuse %{major}
-%define devname %mklibname confuse -d
+%define	major	0
+%define	libname	%mklibname confuse %{major}
+%define	devname	%mklibname confuse -d
 
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
 Version:	2.7
-Release:	4
+Release:	5
 License:	ISC
 Group:		System/Libraries
 Url:		http://www.nongnu.org/confuse/
@@ -68,9 +68,9 @@ Development library and header files for the %{name} library
 
 %files -n %{devname}
 %doc doc/html/*
-%{_includedir}/*
-%{_libdir}/*.so
-%{_libdir}/pkgconfig/*.pc
+%{_includedir}/confuse.h
+%{_libdir}/libconfuse.so
+%{_libdir}/pkgconfig/libconfuse.pc
 %{_mandir}/man3/*
 
 #----------------------------------------------------------------------------
@@ -79,10 +79,7 @@ Development library and header files for the %{name} library
 %setup -q -n confuse-%{version}
 
 %build
-%configure2_5x \
-	--enable-shared \
-	--disable-static \
-	--disable-rpath
+%configure	--enable-shared
 
 %make
 
@@ -90,7 +87,6 @@ Development library and header files for the %{name} library
 %makeinstall_std
 
 install -d %{buildroot}%{_mandir}/man3
-install -m0644 doc/man/man3/*.3 %{buildroot}%{_mandir}/man3/
+install -m644 doc/man/man3/*.3 %{buildroot}%{_mandir}/man3/
 
 %find_lang confuse
-
