@@ -1,15 +1,15 @@
-%define	major	0
+%define	major	1
 %define	libname	%mklibname confuse %{major}
 %define	devname	%mklibname confuse -d
 
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
-Version:	2.7
-Release:	6
+Version:	3.0
+Release:	1
 License:	ISC
 Group:		System/Libraries
-Url:		http://www.nongnu.org/confuse/
-Source0:	http://bzero.se/confuse/confuse-%{version}.tar.gz
+Url:		https://github.com/martinh/libconfuse
+Source0:	https://github.com/martinh/libconfuse/releases/download/v%{version}/confuse-%{version}.tar.gz
 Conflicts:	%{_lib}confuse0 < 2.7-4
 
 %description
@@ -24,10 +24,9 @@ API.
 The goal of libConfuse is not to be the configuration file parser library
 with a gazillion of features. Instead, it aims to be easy to use and quick
 to integrate with your code. libConfuse was called libcfg before, but was
-changed to not confuse with other similar libraries. 
+changed to not confuse with other similar libraries.
 
 %files -f confuse.lang
-%doc AUTHORS NEWS README
 
 #----------------------------------------------------------------------------
 
@@ -67,7 +66,6 @@ Conflicts:	%{_lib}confuse0 < 2.7-4
 Development library and header files for the %{name} library
 
 %files -n %{devname}
-%doc doc/html/*
 %{_includedir}/confuse.h
 %{_libdir}/libconfuse.so
 %{_libdir}/pkgconfig/libconfuse.pc
@@ -88,5 +86,6 @@ Development library and header files for the %{name} library
 
 install -d %{buildroot}%{_mandir}/man3
 install -m644 doc/man/man3/*.3 %{buildroot}%{_mandir}/man3/
+rm -rf %{buildroot}/%{_datadir}/doc/confuse/
 
 %find_lang confuse
