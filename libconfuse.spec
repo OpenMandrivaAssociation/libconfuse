@@ -1,10 +1,10 @@
-%define	major	1
+%define	major	2
 %define	libname	%mklibname confuse %{major}
 %define	devname	%mklibname confuse -d
 
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
-Version:	3.0
+Version:	3.3
 Release:	1
 License:	ISC
 Group:		System/Libraries
