@@ -5,7 +5,7 @@
 Summary:	A library for parsing configuration files in C
 Name:		libconfuse
 Version:	3.3
-Release:	1
+Release:	2
 License:	ISC
 Group:		System/Libraries
 Url:		https://github.com/martinh/libconfuse
