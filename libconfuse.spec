@@ -12,6 +12,11 @@ Url:		https://github.com/martinh/libconfuse
 Source0:	https://github.com/martinh/libconfuse/releases/download/v%{version}/confuse-%{version}.tar.gz
 Conflicts:	%{_lib}confuse0 < 2.7-4
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 libConfuse is a configuration file parser library, licensed under the terms
 of the ISC license, and written in C. It supports sections and (lists of)
