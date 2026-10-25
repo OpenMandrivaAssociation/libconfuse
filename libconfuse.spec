@@ -14,7 +14,7 @@ Conflicts:	%{_lib}confuse0 < 2.7-4
 
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
+BuildRequires:	libtool-autoconf-macros
 BuildRequires:	slibtool
 BuildRequires:	make
 %description
@@ -84,10 +84,12 @@ Development library and header files for the %{name} library
 %build
 %configure	--enable-shared
 
-%make
+# slibtoolize installs a stub ltmain.sh. The generated ./libtool then
+# exits 0 without writing libconfuse.la.
+%make_build LIBTOOL=slibtool-shared
 
 %install
-%makeinstall_std
+%make_install LIBTOOL=slibtool-shared
 
 install -d %{buildroot}%{_mandir}/man3
 install -m644 doc/man/man3/*.3 %{buildroot}%{_mandir}/man3/
